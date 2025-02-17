@@ -197,6 +197,17 @@ first div in the grid  and place it in the grid. */
 /* Step 9: Write the selector/rule property to style the nav element */
 
 @media (min-width: 800px) {
+
+     /* Center text vertically within its section */
+     .about,
+     .method,
+     .clients,
+     .contact {
+          display: flex;
+          align-items: center;
+          text-align: center;
+     }
+
      nav {
           text-align: right;
           padding: 30px 0;
@@ -260,9 +271,21 @@ img {
      .clients,
      .contact {
           display: flex;
+          flex-direction: column;
+          justify-content: center;
           align-items: center;
           text-align: center;
+          height: 100%;
+          /* Ensure it fills the parent grid area */
      }
+     .about-image, .method-image, .clients-image, .contact-image {
+          grid-column: 1 / -1;
+          max-height: 600px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
 }
 
 /* NAV Right Alignment & Alternating Layouts at 900px */
