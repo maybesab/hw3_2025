@@ -1,0 +1,315 @@
+/*Your Code Here*/
+/* PLEASE DO NOT REMOVE MY COMMENTS.  THEY HELP US HELP YOU DEBUG. */
+
+/* Step 1: Write selector/rule property to add an underline when
+links in the navigation are in the hover or focus state.*/
+
+
+
+/* Step 2a: Write selector/rule property to position the default position for the skip class element*/
+
+
+/* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
+
+
+/* Step 3: Write selector/rule property to style all elements when in focus*/
+
+
+
+/* Step 4: Write selector/rule property to style the container */
+
+
+/* Step 5: Write selector/rule property to add the background image to the 
+first div in the grid  and place it in the grid. */
+
+
+
+/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
+ four rows in the grid. */
+
+/*This will be a lot of rules.... but be strategic and combine seletors*/
+
+
+/* Step 8: Write the selector/rule property to style the .text-block class. */
+
+
+/* Add your media query here */
+
+
+/* Step 9: Write the selector/rule property to style the nav element */
+
+
+/* Step 10: Write the selector/rule property to update the .container class */
+
+
+/* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+
+
+
+/* Step 13:Write the selector/rule property to update the .text-block class */
+
+/* Add an underline under any link in the nav that is in the hover or focus state.
+The “Skip to content link” (the link within the skip class) should have the following styles on all screen sizes
+The link is positioned 40px above the top of its parent element (it is hidden by default).
+When the link is in focus it is positioned 20px below the top of its parent (so it is visible only when in focus.)
+
+
+Any element in focus should have a 2px solid border on all sides.
+The following specifications are for the default/mobile view:
+
+.container class uses grid:
+Three columns: 1fr 5fr 1fr
+Gap of 15px between rows;
+Hint: review the Inspect Element images for this one
+
+The first child of the container should
+Take up  all of the columns
+Use the header.jpg file as a non-repeating background image with parallax effect
+You can NOT assume that the .overview class will always be the first child.  
+
+The classes  .about, .method, .clients, and .contact:
+Begin in 2nd column and span one column
+Begin on the 2nd, 3rd, 4th and 5th rows respectively. 
+
+
+The .about-image, .method-image, .clients-image,   and .contact-image elements:
+Cover all of the columns.
+Have a maximum height of 600px
+Hide any content that goes outside their grid cell. 
+Begin on the 2nd, 3rd, 4th and 5th row respectively.
+
+
+The .text-block class:
+Is centered horizontally and vertically with centered text.
+Check your output against the screenshots provided 
+
+The following specifications are for the desktop view (windows of 800px or greater)
+Move the navigation so that the nav is aligned to the other side of the window and has a padding of 30px on the top and bottom and 0 on the left and right.
+
+
+The .container class uses grid with
+Five columns: 50px, auto, 500px, auto, and  50px
+
+The .about, .clients, .method-image, .contact-image:
+Begin in the third column and span two columns
+
+
+The .method, .contact, .about-image, and .clients-image:
+Begin in the second column and span two columns.
+
+
+The .text-block class:
+Has  maximum height of  250px
+Ensures that  any content that goes outside their grid cell is still reachable. 
+
+
+Validate your code in all views and fix errors.
+Tips!
+Start with the css file and look for the places you should.
+Get the default (mobile view) complete before you start the desktop view.
+If your rules cascade correctly, you should have fewer selectors in the desktop view
+
+Submission Requirements:
+Upload your code to Github in a repo called hw3_2025.  Make sure to link it to Github Pages so we can see your deployed code.
+Submit link in Canvas.  We want to see the deployed page, not the code so the URL should be http://<your-user-name>.github.io/hw3_2025
+There is no autograder, but there is a rubric for you to follow.
+
+ */
+/* Step 1: Write selector/rule property to add an underline when
+links in the navigation are in the hover or focus state.*/
+nav a:hover,
+nav a:focus {
+     text-decoration: underline;
+}
+
+/* Step 2a: Write selector/rule property to position the default position for the skip class element*/
+.skip {
+     position: absolute;
+     top: -40px;
+}
+
+/* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
+.skip:focus {
+     top: 20px;
+}
+
+/* Step 3: Write selector/rule property to style all elements when in focus*/
+:focus {
+     border: 2px solid black;
+}
+
+/* Step 4: Write selector/rule property to style the container */
+.container {
+     display: grid;
+     grid-template-columns: 1fr 5fr 1fr;
+     grid-gap: 15px;
+}
+
+/* Step 5: Write selector/rule property to add the background image to the
+first div in the grid  and place it in the grid. */
+.container>*:first-child {
+     grid-column: 1 / -1;
+     background-image: url('../images/header.jpg');
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+}
+
+/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
+ four rows in the grid. */
+.about,
+.method,
+.clients,
+.contact {
+     grid-column: 2 / 3;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+}
+
+/* extrass */
+/*
+ */
+
+/* The .about-image, .method-image, .clients-image, and .contact-image elements:
+   - Cover all of the columns.
+   - Have a maximum height of 600px.
+   - Hide any content that goes outside their grid cell.
+   - Begin on the 2nd, 3rd, 4th, and 5th rows respectively. */
+.about-image,
+.method-image,
+.clients-image,
+.contact-image {
+     grid-column: 1 / -1;
+     max-height: 600px;
+     overflow: hidden;
+}
+
+.text-block {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+}
+
+/* Add your media query here */
+/* Step 9: Write the selector/rule property to style the nav element */
+
+@media (min-width: 800px) {
+     nav {
+          text-align: right;
+          padding: 30px 0;
+     }
+
+     /* Step 10: Write the selector/rule property to update the .container class */
+     .container {
+          grid-template-columns: 50px auto 500px auto 50px;
+     }
+
+     /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+     .about,
+     .clients,
+     .method-image,
+     .contact-image {
+          grid-column: 3 / span 2;
+     }
+
+     .method,
+     .contact,
+     .about-image,
+     .clients-image {
+          grid-column: 2 / span 2;
+     }
+
+     /* Step 13:Write the selector/rule property to update the .text-block class */
+     /* The .text-block class:
+       - Has a maximum height of 250px.
+       - Ensures that any content that goes outside their grid cell is still reachable. */
+     .text-block {
+          max-height: 250px;
+          overflow: hidden;
+     }
+}
+
+/* Validate your code in all views and fix errors. */
+
+/* Link Hover Effect */
+a:hover {
+     font-weight: bold;
+}
+
+/* Image Resizing */
+img {
+     width: 50%;
+     height: auto;
+}
+
+
+/* stuff from the images that I have noticed to add */
+/* NAV Alignment at 700px */
+/* NAV Alignment at 700px */
+@media (min-width: 700px) {
+     nav {
+          text-align: left;
+     }
+
+     /* Center text vertically within its section */
+     .about,
+     .method,
+     .clients,
+     .contact {
+          display: flex;
+          align-items: center;
+          text-align: center;
+     }
+}
+
+/* NAV Right Alignment & Alternating Layouts at 900px */
+@media (min-width: 900px) {
+     nav {
+          text-align: right;
+          padding: 30px 0;
+     }
+
+     .container {
+          grid-template-columns: 50px auto 500px auto 50px;
+     }
+
+     /* Alternating Sections */
+     .about {
+          grid-column: 3 / span 2;
+          text-align: right;
+     }
+
+     .about-image {
+          grid-column: 2 / span 2;
+     }
+
+     .method {
+          grid-column: 2 / span 2;
+          text-align: left;
+     }
+
+     .method-image {
+          grid-column: 3 / span 2;
+     }
+
+     .clients {
+          grid-column: 3 / span 2;
+          text-align: right;
+     }
+
+     .clients-image {
+          grid-column: 2 / span 2;
+     }
+
+     .contact {
+          grid-column: 2 / span 2;
+          text-align: left;
+     }
+
+     .contact-image {
+          grid-column: 3 / span 2;
+     }
+}
